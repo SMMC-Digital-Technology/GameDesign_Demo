@@ -11,17 +11,20 @@ window.onload = function() {
 		game.load.image('background','assets/background.png');
     game.load.image('enemy', 'assets/enemy.png');
     game.load.image('NameInCode', 'assets/NameOfFile.jpg'); // Just an example
+		game.load.image('powerup','assets/powerup.png');
   }
 
   //Create function, where everything is created
   function create() {
 
+		game.add.sprite(0, 0, 'background');
+	
 		player = game.add.sprite(game.world.width/2,game.world.width/2,'player');
 		game.physics.enable(player, Phaser.Physics.ARCADE);
     player.body.gravity.y = 200;
     player.body.collideWorldBounds = true;
 
-		game.add.sprite(0, 0, 'background');
+		game.add.sprite(50,50,'powerup');
 
 		moveKeys = game.input.keyboard.addKeys(
       {
