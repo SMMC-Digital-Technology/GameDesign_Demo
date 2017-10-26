@@ -10,8 +10,7 @@ window.onload = function() {
 		game.load.image('player','assets/player.png');
 		game.load.image('background','assets/background.png');
     game.load.image('enemy', 'assets/enemy.png');
-    game.load.image('NameInCode', 'assets/NameOfFile.jpg'); // Just an example
-		game.load.image('powerup','assets/powerup.png');
+	game.load.image('powerup','assets/powerUp.png');
   }
 
   //Create function, where everything is created
