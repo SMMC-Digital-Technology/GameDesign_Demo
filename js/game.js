@@ -40,7 +40,7 @@ window.onload = function() {
   //This function runs each and every frame
   function update() {
 		if(moveKeys.up.isDown){
-			//TODO: Do jump stuff
+			player.body.velocity.y = -350;
 		}
   }
 };
