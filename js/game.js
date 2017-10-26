@@ -11,7 +11,7 @@ window.onload = function() {
 
   //Create function, where everything is created
   function create() {
-
+		game.add.sprite(0, 0, 'background');
   }
 
   //This function runs each and every frame
