@@ -4,6 +4,7 @@ window.onload = function() {
   var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
 	var player;
+	var moveKeys;
 		
   //Preload function, where we can load all of the assets that will be used
   function preload() {
@@ -15,7 +16,19 @@ window.onload = function() {
   function create() {
 
 		player = game.add.sprite(game.world.width/2,game.world.width/2,'player');
+		game.physics.enable(player, Phaser.Physics.ARCADE);
+    player.body.gravity.y = 200;
+    player.body.collideWorldBounds = true;
+		
 		game.add.sprite(0, 0, 'background');
+		
+		moveKeys = game.input.keyboard.addKeys(
+      {
+        'up': Phaser.KeyCode.W,
+        'left': Phaser.KeyCode.A,
+        'right': Phaser.KeyCode.D
+      }
+    );
 
   }
 
