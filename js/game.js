@@ -5,6 +5,8 @@ window.onload = function() {
 
 	var player;
   var moveKeys;
+  var speed = 5;
+  
   //Preload function, where we can load all of the assets that will be used
   function preload() {
 		game.load.image('player','assets/player.png');
@@ -39,6 +41,13 @@ window.onload = function() {
 
   //This function runs each and every frame
   function update() {
+	  
+	 if (moveKeys.left.isDown) {
+		 player.x -= speed;
+	 }
+	 else if (moveKeys.right.isDown) {
+		 player.x += speed;
+	 }
 		if(moveKeys.up.isDown){
 			//TODO: Do jump stuff
 		}
