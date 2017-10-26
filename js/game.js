@@ -13,7 +13,11 @@ window.onload = function() {
 
   //Create function, where everything is created
   function create() {
+<<<<<<< HEAD
 		player = game.add.sprite(game.world.width/2,game.world.width/2,'player');
+=======
+		game.add.sprite(0, 0, 'background');
+>>>>>>> a6ed9eca34d20fbbecafcdcccd7fc05a17c61943
   }
 
   //This function runs each and every frame
