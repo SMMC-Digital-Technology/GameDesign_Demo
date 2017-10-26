@@ -11,12 +11,14 @@ window.onload = function() {
 		game.load.image('background','assets/background.png');
     game.load.image('enemy', 'assets/enemy.png');
 	game.load.image('powerup','assets/powerUp.png');
-  }
+// This is a comment
+	}
 
   //Create function, where everything is created
   function create() {
 
 		game.add.sprite(0, 0, 'background');
+
 	
 		player = game.add.sprite(game.world.width/2,game.world.width/2,'player');
 		game.physics.enable(player, Phaser.Physics.ARCADE);
