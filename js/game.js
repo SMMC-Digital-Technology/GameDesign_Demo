@@ -4,11 +4,13 @@ window.onload = function() {
   var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
 	var player;
-		
+
   //Preload function, where we can load all of the assets that will be used
   function preload() {
 		game.load.image('player','assets/player.png');
 		game.load.image('background','assets/background.png');
+    game.load.image('enemy', 'assets/enemy.png');
+    game.load.image('NameInCode', 'assets/NameOfFile.jpg'); // Just an example
   }
 
   //Create function, where everything is created
