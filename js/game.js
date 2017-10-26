@@ -11,7 +11,7 @@ window.onload = function() {
 		game.load.image('background','assets/background.png');
     game.load.image('enemy', 'assets/enemy.png');
 	game.load.image('powerup','assets/powerUp.png');
-// This is a comment
+
 	}
 
   //Create function, where everything is created
