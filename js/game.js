@@ -8,7 +8,9 @@ window.onload = function() {
   var speed = 5;
 	var powerups;
 	var environment;
-  
+  var scoreText;
+  var score = 0;
+
   //Preload function, where we can load all of the assets that will be used
   function preload() {
 		game.load.image('player','assets/player.png');
@@ -24,15 +26,15 @@ window.onload = function() {
 
 		//World creation
 		game.add.sprite(0, 0, 'background');
-		
+
 		environment = game.add.group();
 		environment.enableBody = true;
-		
+
 		ground = environment.create(0,game.world.height-48,'ground');
 		ground.width = game.world.width;
 		ground.body.immovable = true;
-	
-	
+
+
 		//Player creation
 		player = game.add.sprite(game.world.width/2,game.world.width/2,'player');
 		game.physics.enable(player, Phaser.Physics.ARCADE);
@@ -46,10 +48,12 @@ window.onload = function() {
         'right': Phaser.KeyCode.D
       }
     );
-		
+
 		powerups = game.add.group();
 		powerups.enableBody = true;
 		powerups.create(50,200,'powerup');
+
+    scoreText = game.add.text(650, 16, 'Score: ' + score, {fontSize: '32px', fill: '#FFF' });
 
   }	//END of create
 
@@ -58,7 +62,7 @@ window.onload = function() {
 		//Collision events
 		game.physics.arcade.collide(player, environment);
     game.physics.arcade.overlap(player, powerups, collectPowerup);
-	  
+
 	 if (moveKeys.left.isDown) {	//Player moves left
 		 player.x -= speed;
 	 }
@@ -69,7 +73,7 @@ window.onload = function() {
 			player.body.velocity.y = -350;
 		}
   }	//END of update
-	
+
 	//Increase the player's speed when they collect a powerup
 	function collectPowerup(player, powerup){
 		speed *= 1.2;
